@@ -1,12 +1,5 @@
 # Property Finder - Tech Interview
 
-## Table of Contents
-- [Task 1 - Rebuild the following UI in SwiftUI](#task-1---rebuild-the-following-ui-in-swiftui)
-- [Task 2 - Fetch listings and populate the Search screen](#task-2---fetch-listings-and-populate-the-search-screen)
-- [Task 3 - Favourites and filtering](#task-3---favourites-and-filtering)
-- [Bonus Task - Refactor the Settings screen](#bonus-task---refactor-the-settings-screen)
-- [Sending the project file back in](#sending-the-project-file-back-in)
-
 Congratulations! 🥳 
 This is a **take‑home coding exercise** for the Property Finder iOS team. 
 You have **up to one week** to work through the tasks below at your own pace.
@@ -20,6 +13,15 @@ Our idea is to evaluate your working style:
 * **How you are tackling specific tasks**
 
 We put together a very lite version of our beloved Property Finder application, with a simple backend functionality, tracking, logging, and all the other stuff... just basic UI of two out of many screens of the actual application.
+
+---
+
+## Table of Contents
+- [Task 1 - Rebuild the following UI in SwiftUI](#task-1---rebuild-the-following-ui-in-swiftui)
+- [Task 2 - Fetch listings and populate the Search screen](#task-2---fetch-listings-and-populate-the-search-screen)
+- [Task 3 - Favourites and filtering](#task-3---favourites-and-filtering)
+- [Bonus Task - Refactor the Settings screen](#bonus-task---refactor-the-settings-screen)
+- [Sending the project file back in](#sending-the-project-file-back-in)
 
 ---
 
