@@ -1,5 +1,12 @@
 # Property Finder - Tech Interview
 
+## Table of Contents
+- [Task 1 - Rebuild the following UI in SwiftUI](#task-1---rebuild-the-following-ui-in-swiftui)
+- [Task 2 - Fetch listings and populate the Search screen](#task-2---fetch-listings-and-populate-the-search-screen)
+- [Task 3 - Favourites and filtering](#task-3---favourites-and-filtering)
+- [Bonus Task - Refactor the Settings screen](#bonus-task---refactor-the-settings-screen)
+- [Sending the project file back in](#sending-the-project-file-back-in)
+
 Congratulations! 🥳 
 This is a **take‑home coding exercise** for the Property Finder iOS team. 
 You have **up to one week** to work through the tasks below at your own pace.
@@ -48,12 +55,13 @@ We host a JSON payload that represents the list of properties shown in the scree
 
 Your job is to:
 
-- **Fetch the data** from the hosted endpoint using `URLSession` (or your preferred networking layer)
+- **Fetch the data** from the hosted endpoint using `URLSession`
 - **Populate the Search screen** with the decoded listings, including tags, meta information, and carousel images
 
 ### JSON shape
 
-Use the following JSON structure as the contract for your models (this is the shape of the payload returned from `https://simplejsoncms.com/api/m6nfoc4jlw`):
+<details>
+<summary>Click to view JSON contract</summary>
 
 ```json
 {
@@ -96,6 +104,8 @@ Use the following JSON structure as the contract for your models (this is the sh
 }
 ```
 
+</details>
+
 ### Notes
 
 - **Studio vs bedrooms**: `bedrooms: null` represents a Studio. Any integer value should be rendered as `"N Beds"`.
@@ -107,6 +117,9 @@ Use the following JSON structure as the contract for your models (this is the sh
 - **cURL Example**: You may use this `cURL` example to fetch the response to fill-up the data
 
 `curl -X GET "https://simplejsoncms.com/api/m6nfoc4jlw"`
+
+> [!IMPORTANT]
+> Please refrain from using 3rd party libraries
 
 
 ---
@@ -139,9 +152,9 @@ We will evaluate:
 * **How you are tackling the refactor**
 * **Outcome of the refactor**
 
-```note
-Even if you didn't finish it, just writing comments over what you would've intended here and how should be enough
-```
+
+> [!NOTE]
+> Even if you didn't finish it, just writing comments over what you would've intended here and how should be enough
 
 ---
 
