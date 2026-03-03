@@ -1,26 +1,24 @@
 # Property Finder - Tech Interview
 
-Congratulations on reaching the Tech interview stage! 🥳 As your interviewees most probably told you, the **Property Finder - Tech Interview** is scheduled for **60 min** and roughly split into the following parts:
-
-* **10 min**: Introduction 👥
-* **45 min**: Task 🏡
-* **5 min**: Q&A ❓
+Congratulations! 🥳 
+This is a **take‑home coding exercise** for the Property Finder iOS team. 
+You have **up to one week** to work through the tasks below at your own pace.
 
 ---
 
-It is unnecessary to complete all the tasks 💯% (even though it would be pretty impressive). Our idea is to evaluate your working style:
+It is unnecessary to complete all the tasks 💯% (even though it would be pretty impressive). 
 
+Our idea is to evaluate your working style:
 * **How you structure your code**
 * **How you are tackling specific tasks**
-* etc.
 
-We put together a very lite version of our beloved Property Finder application, without any backend functionality, tracking, logging, and all the other stuff... just basic UI of two out of many screens of the actual application.
+We put together a very lite version of our beloved Property Finder application, with a simple backend functionality, tracking, logging, and all the other stuff... just basic UI of two out of many screens of the actual application.
 
 ---
 
-## Task - Rebuild the following UI in SwiftUI
+## Task 1 - Rebuild the following UI in SwiftUI
 
-![Search Screen](./Screenshots/SearchScreen.png)
+![Search Screen](Screenshots/SearchScreen.png)
 
 ### Notes
 
@@ -40,8 +38,113 @@ We put together a very lite version of our beloved Property Finder application, 
 
 ---
 
+## Task 2 - Fetch listings and populate the Search screen
+
+In Task 1 you rebuilt the UI of the search screen. In this task, you will **back it with real data**.
+
+We host a JSON payload that represents the list of properties shown in the screenshot at:
+
+`https://simplejsoncms.com/api/m6nfoc4jlw`
+
+Your job is to:
+
+- **Fetch the data** from the hosted endpoint using `URLSession` (or your preferred networking layer)
+- **Populate the Search screen** with the decoded listings, including tags, meta information, and carousel images
+
+### JSON shape
+
+Use the following JSON structure as the contract for your models (this is the shape of the payload returned from `https://simplejsoncms.com/api/m6nfoc4jlw`):
+
+```json
+{
+  "listings": [
+    {
+      "id": "prop_001",
+      "type": "Apartment",
+      "deliveryYear": 2022,
+      "price": 2575000,
+      "currency": "AED",
+      "priceInclusive": true,
+      "location": "Laguna Tower, Lake Almas West, Jumeirah Lake Tower",
+      "bedrooms": null,
+      "bathrooms": 1,
+      "areaSqft": 1356,
+      "publishedAt": "2024-11-28T00:00:00Z",
+      "lastContactedAt": "2021-07-28T00:00:00Z",
+      "tags": ["verified", "new_construction", "live_viewing"],
+      "images": ["FirstImage", "SecondImage"],
+      "contactOptions": ["phone", "email", "whatsapp"]
+    },
+    {
+      "id": "prop_002",
+      "type": "Apartment",
+      "deliveryYear": 2023,
+      "price": 1850000,
+      "currency": "AED",
+      "priceInclusive": false,
+      "location": "Marina Heights, Dubai Marina",
+      "bedrooms": 1,
+      "bathrooms": 2,
+      "areaSqft": 980,
+      "publishedAt": "2024-11-30T00:00:00Z",
+      "lastContactedAt": null,
+      "tags": ["verified"],
+      "images": ["SecondImage", "FirstImage"],
+      "contactOptions": ["phone", "whatsapp"]
+    }
+  ]
+}
+```
+
+### Notes
+
+- **Studio vs bedrooms**: `bedrooms: null` represents a Studio. Any integer value should be rendered as `"N Beds"`.
+- **Carousel images**: `images` contains asset names from `Tahudu/Assets/Assets.xcassets/Carousel Images` (`FirstImage`, `SecondImage`). Use these to drive the image carousel.
+- **Tags**: `tags` drives the badges on top of the image (`VERIFIED`, `NEW CONSTRUCTION`, `LIVE VIEWING`). Feel free to introduce an enum to map from the raw values to UI.
+- **Relative dates**: `publishedAt` is an ISO‑8601 timestamp; compute a relative label such as “Published 3 days ago”.
+- **Last contacted**: `lastContactedAt` is nullable. Only show the yellow “Last contacted …” banner when a value is present.
+- **Contact options**: `contactOptions` indicates which contact buttons to show for each listing (phone, email, WhatsApp).
+- **cURL Example**: You may use this `cURL` example to fetch the response to fill-up the data
+
+`curl -X GET "https://simplejsoncms.com/api/m6nfoc4jlw"`
+
+
+---
+
+## Task 3 - Favourites and filtering
+
+Add **local favouriting** to the Search screen and a way to filter by favourites.
+
+### Requirements
+
+1. Tapping the heart icon on a listing card **toggles** it as a favourite.
+2. Favourites are persisted **locally**.
+3. Add a filter control on the first screen (the Search screen) that, when active, shows **only favourited listings**.
+4. The filter state should be clearly visible so the user knows when they are viewing only favourites.
+
+### Notes
+
+- **Architecture**: Decide where the favouriting logic should live (view, view model, data layer, etc.) and structure your code accordingly.
+- **Heart icon state**: The heart should visually reflect the current favourite state (e.g. filled vs outline).
+- **User experience**: Feel free to add small UX touches (animations, empty‑state messaging) as long as the core behaviour is clear.
+
+---
+
+## Bonus Task - Refactor the Settings screen
+
+The code within Screens/Settings could be written much nicer. Your task is to clean it up. 🧹
+
+We will evaluate:
+
+* **How you are tackling the refactor**
+* **Outcome of the refactor**
+
+```note
+Even if you didn't finish it, just writing comments over what you would've intended here and how should be enough
+```
+
+---
+
 ## Sending the project file back in
 
-At the end of the interview, we will kindly ask you to ZIP the whole project and send it back to:
-
-m.shakeer@propertyfinder.ae
+Once you are done with the exercises (within the one‑week window), please share with us back the GitHub Repo you implemented the task on
