@@ -2,7 +2,7 @@
 
 Congratulations! 🥳 
 This is a **take‑home coding exercise** for the Property Finder iOS team. 
-You have **up to one week** to work through the tasks below at your own pace.
+You have **up to 3 days** to work through the tasks below at your own pace.
 
 ---
 
