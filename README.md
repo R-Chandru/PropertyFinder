@@ -6,8 +6,6 @@ You have **up to one week** to work through the tasks below at your own pace.
 
 ---
 
-It is unnecessary to complete all the tasks 💯% (even though it would be pretty impressive). 
-
 Our idea is to evaluate your working style:
 * **How you structure your code**
 * **How you are tackling specific tasks**
