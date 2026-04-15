@@ -12,6 +12,11 @@ extension UIColor {
     // MARK: Social Media
 
     static let whatsApp = UIColor(named: "WhatsApp") ?? UIColor.systemGreen
+    
+    // MARK: UI
+    static let cardText = UIColor(named: "CardText") ?? UIColor.systemPurple
+    static let cardBackground = UIColor(named: "CardBackground") ?? UIColor.systemPurple
+    static let bannerBackground = UIColor(named: "BannerBackround") ?? UIColor.systemYellow
 }
 
 extension Color {
@@ -21,4 +26,10 @@ extension Color {
     // MARK: Social Media
 
     static let whatsApp = Color("WhatsApp")
+    
+    
+    // MARK: UI
+    static let cardText = Color("CardText")
+    static let cardBackground = Color("CardBackground")
+    static let bannerBackground = Color("BannerBackround")
 }

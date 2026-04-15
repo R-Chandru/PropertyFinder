@@ -160,4 +160,4 @@ We will evaluate:
 
 ## Sending the project file back in
 
-Once you are done with the exercises (within the one‑week window), please share with us back the GitHub Repo you implemented the task on
+Once you are done with the exercises (within the **3-days** window), please share with us back the GitHub Repo you implemented the task on

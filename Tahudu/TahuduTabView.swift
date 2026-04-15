@@ -6,16 +6,18 @@
 import SwiftUI
 
 struct TahuduTabView: View {
+    
+    @EnvironmentObject var container: AppContainer
     @State private var selectedTab = Tabs.search.rawValue
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            SearchView()
+            SearchView(viewModel: container.searchViewModel)
                 .tag(Tabs.search.rawValue)
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
-            SettingsView()
+            SettingsView(viewModel: container.settingsViewModel)
                 .tag(Tabs.settings.rawValue)
                 .tabItem {
                     Label("My Account", systemImage: selectedTab == Tabs.settings.rawValue ? "person.fill" : "person")
